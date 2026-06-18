@@ -1,0 +1,304 @@
+/* ---------------------------------
+   메인페이지(index.html) 전용 스타일
+--------------------------------- */
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  color: var(--color-white);
+  background-color: var(--color-dark); /* 이미지 로딩 전/대체 배경 */
+  background-image: url("../images/common/mainbanner.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(20, 10, 6, 0.75));
+}
+
+.hero__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  z-index: 1;
+}
+
+.hero__title {
+  font-family: "Cormorant Garamond", var(--font-serif);
+  font-size: 72px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.hero__desc {
+  font-family: "Pretendard", sans-serif;
+  font-size: 32px;
+  max-width: 1020px;
+  line-height: 1.5;
+}
+
+.hero__indicator-nav {
+  display: flex;
+}
+
+.hero__indicator-seg {
+  width: 33px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.hero__indicator-seg.is-active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.hero__indicator {
+  font-family: "Pretendard", sans-serif;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 90px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 16px;
+}
+
+/* About / Brand Intro */
+.brand {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.brand__eyebrow {
+  font-family: var(--font-serif);
+  color: var(--color-gold);
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.brand__name {
+  font-family: var(--font-serif);
+  color: var(--color-maroon);
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+.brand__divider {
+  width: 1px;
+  height: 60px;
+  background-color: var(--color-line);
+  margin: 40px auto;
+}
+
+.brand__title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.brand__text {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.brand__text + .brand__text {
+  margin-top: 16px;
+}
+
+.brand__btn {
+  margin-top: 40px;
+}
+
+/* Recommendation */
+.recommend {
+  padding: 100px 0;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.recommend .section-title {
+  color: var(--color-white);
+  margin-bottom: 48px;
+}
+
+.recommend__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.recommend__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.recommend__card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.recommend__label {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--color-white);
+}
+
+/* Product */
+.product {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.product__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.product__more {
+  font-size: 13px;
+  color: var(--color-text-sub);
+}
+
+.product__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.product__card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.product__name {
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.product__btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+/* Beyond Chocolate */
+.beyond {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.beyond .section-title {
+  color: var(--color-text);
+}
+
+.beyond .section-title em {
+  font-style: normal;
+  color: var(--color-maroon);
+}
+
+.beyond__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  text-align: left;
+}
+
+.beyond__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.beyond__card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.beyond__card-text {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  color: var(--color-white);
+}
+
+.beyond__card-text strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.beyond__card-text span {
+  font-size: 13px;
+}
+
+/* ---------------------------------
+   반응형 - Tablet (~1024px)
+--------------------------------- */
+@media (max-width: 1024px) {
+  .product__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------------------------
+   반응형 - Mobile (~768px)
+--------------------------------- */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 28px;
+  }
+
+  .brand {
+    padding: 80px 0;
+  }
+
+  .brand__title {
+    font-size: 20px;
+  }
+
+  .recommend,
+  .product,
+  .beyond {
+    padding: 60px 0;
+  }
+
+  .recommend__grid,
+  .beyond__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

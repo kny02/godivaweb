@@ -1,0 +1,239 @@
+/* ---------------------------------
+   공통 변수 / 폰트
+--------------------------------- */
+:root {
+  /* Brand color */
+  --color-dark: #2b1a12;       /* 다크 브라운 (헤더 오버레이, RECOMMENDATION, 푸터 배경) */
+  --color-dark-2: #3a241a;     /* 다크 브라운 보조 톤 */
+  --color-gold: #c9a063;       /* 골드 (서브 타이틀, Beyond Chocolate 등) */
+  --color-gold-dark: #a9824a;  /* 골드 보더/버튼 */
+  --color-maroon: #6e1f2a;     /* 'GODIVA', 'Beyond' 포인트 컬러 */
+  --color-white: #ffffff;
+  --color-text: #2b2b2b;
+  --color-text-sub: #6b6b6b;
+  --color-line: #e3e3e3;
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 80px;
+
+  /* Font */
+  --font-serif: "Noto Serif KR", "Times New Roman", serif;
+  --font-sans: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+/* ---------------------------------
+   공통 레이아웃
+--------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  text-align: center;
+}
+
+.section-desc {
+  margin-top: 8px;
+  text-align: center;
+  color: var(--color-text-sub);
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  border: 1px solid var(--color-gold-dark);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--color-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-gold-dark);
+  color: var(--color-white);
+}
+
+/* ---------------------------------
+   헤더 (index.html, about.html 공통)
+--------------------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.25s ease;
+}
+
+/* 히어로 영역을 벗어나 스크롤하면 헤더에 배경색을 채워 가독성 확보 */
+.header.is-scrolled {
+  background-color: var(--color-dark);
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 100%;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-self: start;
+}
+
+.header__logo {
+  justify-self: center;
+}
+
+.header__logo img {
+  height: 36px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header__nav a {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  color: var(--color-white);
+}
+
+.header__utils {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-self: end;
+}
+
+.header__utils img {
+  width: 20px;
+  height: 20px;
+}
+
+.header__menu-btn {
+  display: none;
+}
+
+/* 모바일 메뉴 */
+@media (max-width: 768px) {
+  .header__nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--color-dark);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .header__nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .header__nav a {
+    display: block;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header__menu-btn {
+    display: block;
+  }
+}
+
+/* ---------------------------------
+   푸터 (index.html, about.html 공통)
+--------------------------------- */
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 60px 0 24px;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer__logo img {
+  height: 60px;
+  margin-bottom: 16px;
+}
+
+.footer__info {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #cbbfb6;
+}
+
+.footer__info dt {
+  display: inline-block;
+  width: 60px;
+  color: var(--color-white);
+}
+
+.footer__social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.footer__bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: #cbbfb6;
+}
+
+/* ---------------------------------
+   반응형 브레이크포인트 가이드
+   - Desktop : 1025px ~
+   - Tablet  : 769px ~ 1024px
+   - Mobile  : ~ 768px
+--------------------------------- */
