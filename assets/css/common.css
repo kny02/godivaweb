@@ -3,19 +3,19 @@
 --------------------------------- */
 :root {
   /* Brand color */
-  --color-dark: #2b1a12;       /* 다크 브라운 (헤더 오버레이, RECOMMENDATION, 푸터 배경) */
-  --color-dark-2: #3a241a;     /* 다크 브라운 보조 톤 */
-  --color-gold: #c9a063;       /* 골드 (서브 타이틀, Beyond Chocolate 등) */
-  --color-gold-dark: #a9824a;  /* 골드 보더/버튼 */
-  --color-maroon: #6e1f2a;     /* 'GODIVA', 'Beyond' 포인트 컬러 */
+  --color-dark: #2b1a12;
+  --color-dark-2: #3a241a;
+  --color-gold: #c9a063;
+  --color-gold-dark: #a9824a;
+  --color-maroon: #6e1f2a;
   --color-white: #ffffff;
   --color-text: #2b2b2b;
   --color-text-sub: #6b6b6b;
   --color-line: #e3e3e3;
 
-  /* Layout */
-  --container-width: 1200px;
-  --header-height: 80px;
+  /* Layout — 1920px 기준 */
+  --container-width: 1440px;
+  --header-height: 100px;
 
   /* Font */
   --font-serif: "Noto Serif KR", "Times New Roman", serif;
@@ -35,31 +35,31 @@ body {
   width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: 36px;
+  font-size: 56px;
   text-align: center;
 }
 
 .section-desc {
-  margin-top: 8px;
+  margin-top: 12px;
   text-align: center;
   color: var(--color-text-sub);
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 32px;
+  padding: 16px 48px;
   border: 1px solid var(--color-gold-dark);
   font-family: var(--font-serif);
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 16px;
+  letter-spacing: 1.5px;
   color: var(--color-text);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 /* ---------------------------------
-   헤더 (index.html, about.html 공통)
+   헤더
 --------------------------------- */
 .header {
   position: fixed;
@@ -83,7 +83,6 @@ body {
   transition: background-color 0.25s ease;
 }
 
-/* 히어로 영역을 벗어나 스크롤하면 헤더에 배경색을 채워 가독성 확보 */
 .header.is-scrolled {
   background-color: var(--color-dark);
 }
@@ -98,43 +97,37 @@ body {
 .header__menu {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
   justify-self: start;
 }
 
 .header__logo {
   justify-self: center;
-  margin-top: 20px;
-}
-
-.header__logo img {
-  height: 68.67px;
-  width: 238px;
-
+  margin-top: 24px;
 }
 
 .header__nav {
   display: flex;
-  gap: 32px;
+  gap: 24px;
 }
 
 .header__nav a {
-  font-family: "Inter", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 300;
   color: var(--color-white);
 }
 
 .header__utils {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   justify-self: end;
 }
 
 .header__utils img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .header__menu-btn {
@@ -154,9 +147,9 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(-6px);
   background-color: var(--color-dark);
-  min-width: 140px;
+  min-width: 160px;
   list-style: none;
-  padding: 8px 0 8px;
+  padding: 8px 0;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -170,9 +163,9 @@ body {
 
 .nav-dropdown li a {
   display: block;
-  padding: 10px 20px;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
+  padding: 12px 24px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   color: var(--color-white);
   white-space: nowrap;
@@ -184,8 +177,17 @@ body {
   color: var(--color-gold);
 }
 
+/* ---------------------------------
+   반응형 브레이크포인트
+   - 1920px  : 기본 (설계 기준)
+   - 1440px  : Large Desktop
+   - 1200px  : Desktop
+   - 1024px  : Tablet
+   - 768px   : Mobile
+--------------------------------- */
+
 /* 모바일 메뉴 */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .header__nav {
     position: fixed;
     top: var(--header-height);
@@ -208,7 +210,7 @@ body {
 
   .header__nav a {
     display: block;
-    padding: 16px 20px;
+    padding: 18px 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -232,76 +234,70 @@ body {
   }
 
   .nav-dropdown li a {
-    padding: 12px 20px 12px 36px;
-    font-size: 13px;
+    padding: 14px 24px 14px 48px;
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.7);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 }
 
 /* ---------------------------------
-   푸터 (index.html, about.html 공통)
+   푸터
 --------------------------------- */
 .footer {
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding: 60px 0 24px;
+  padding: 80px 0 32px;
 }
 
 .footer__inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap: 48px;
 }
 
 .footer__logo img {
-  height: 60px;
-  margin-bottom: 16px;
+  height: 72px;
+  margin-bottom: 20px;
 }
 
 .footer__info {
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 2;
   color: #cbbfb6;
 }
 
 .footer__info dt {
   display: inline-block;
-  width: 60px;
+  width: 72px;
   color: var(--color-white);
 }
 
 .footer__social {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
 
 .footer__social a {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
+  font-size: 15px;
 }
 
 .footer__bottom {
-  margin-top: 40px;
-  padding-top: 20px;
+  margin-top: 48px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
-  font-size: 12px;
+  font-size: 14px;
   color: #cbbfb6;
 }
-
-/* ---------------------------------
-   반응형 브레이크포인트 가이드
-   - Desktop : 1025px ~
-   - Tablet  : 769px ~ 1024px
-   - Mobile  : ~ 768px
---------------------------------- */

@@ -1,54 +1,61 @@
 /* ---------------------------------
    메인페이지(index.html) 전용 스타일
+   기준 해상도: 1920px
 --------------------------------- */
 
 /* Hero */
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 560px;
+  min-height: 720px;
   color: var(--color-white);
-  background-color: var(--color-dark); /* 이미지 로딩 전/대체 배경 */
+  background-color: var(--color-dark);
   background-image: url("../images/common/mainbanner.png");
   background-size: cover;
   background-position: center;
 }
 
-.hero::after {
+/* .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(20, 10, 6, 0.75));
-}
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(20, 10, 6, 0.75)); 
+} */
 
 .hero__content {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 80px;
+  bottom: 60px;
   z-index: 1;
 }
 
 .hero__title {
   font-family: "Cormorant Garamond", var(--font-serif);
   font-size: 72px;
-  margin-bottom: 16px;
+  margin-bottom: 46px;
   font-weight: bold;
+  line-height: 1;
 }
 
 .hero__desc {
   font-family: "Pretendard", sans-serif;
   font-size: 32px;
-  max-width: 1020px;
+  font-weight: 300;
+  max-width: 1400px;
   line-height: 1.5;
 }
 
 .hero__indicator-nav {
   display: flex;
 }
-
+.hero__indicator-count{
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  letter-spacing: 10%;
+}
 .hero__indicator-seg {
-  width: 33px;
+  width: 33.33px;
   height: 2px;
   background-color: rgba(255, 255, 255, 0.3);
   transition: background-color 0.3s ease;
@@ -58,85 +65,91 @@
   background-color: rgba(255, 255, 255, 1);
 }
 
+.hero__indicator-btns {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
 .hero__indicator {
   font-family: "Pretendard", sans-serif;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 90px;
+  bottom: 60px;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 16px;
   font-size: 16px;
 }
 
 /* About / Brand Intro */
 .brand {
-  padding: 120px 0;
+  padding: 180px 0;
   text-align: center;
 }
 
 .brand__eyebrow {
   font-family: var(--font-serif);
   color: var(--color-gold);
-  font-size: 18px;
-  letter-spacing: 1px;
+  font-size: 24px;
+  letter-spacing: 1.5px;
 }
 
 .brand__name {
   font-family: var(--font-serif);
   color: var(--color-maroon);
-  font-size: 22px;
-  margin-top: 8px;
+  font-size: 30px;
+  margin-top: 12px;
 }
 
 .brand__divider {
   width: 1px;
-  height: 60px;
+  height: 80px;
   background-color: var(--color-line);
-  margin: 40px auto;
+  margin: 60px auto;
 }
 
 .brand__title {
-  font-size: 26px;
+  font-size: 40px;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .brand__text {
-  max-width: 720px;
+  max-width: 1000px;
   margin: 0 auto;
   color: var(--color-text);
-  font-size: 15px;
-  line-height: 1.9;
+  font-size: 18px;
+  line-height: 2;
 }
 
 .brand__text + .brand__text {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .brand__btn {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 /* Recommendation */
 .recommend {
-  padding: 100px 0;
+  padding: 140px 0;
   background-color: var(--color-dark);
   color: var(--color-white);
 }
 
 .recommend .section-title {
   color: var(--color-white);
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 }
 
 .recommend__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .recommend__card {
@@ -152,16 +165,16 @@
 
 .recommend__label {
   position: absolute;
-  left: 20px;
-  bottom: 16px;
+  left: 28px;
+  bottom: 24px;
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: 28px;
   color: var(--color-white);
 }
 
 /* Product */
 .product {
-  padding: 100px 0;
+  padding: 140px 0;
   text-align: center;
 }
 
@@ -170,18 +183,18 @@
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 56px;
 }
 
 .product__more {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--color-text-sub);
 }
 
 .product__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
   text-align: left;
 }
 
@@ -192,21 +205,21 @@
 }
 
 .product__name {
-  margin-top: 16px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .product__btn {
-  margin-top: 12px;
+  margin-top: 16px;
   width: 100%;
-  padding: 10px 0;
-  font-size: 12px;
+  padding: 14px 0;
+  font-size: 14px;
 }
 
 /* Beyond Chocolate */
 .beyond {
-  padding: 100px 0;
+  padding: 140px 0;
   text-align: center;
 }
 
@@ -222,8 +235,8 @@
 .beyond__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 48px;
+  gap: 32px;
+  margin-top: 64px;
   text-align: left;
 }
 
@@ -240,26 +253,129 @@
 
 .beyond__card-text {
   position: absolute;
-  left: 24px;
-  top: 24px;
+  left: 36px;
+  top: 36px;
   color: var(--color-white);
 }
 
 .beyond__card-text strong {
   display: block;
   font-family: var(--font-serif);
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 32px;
+  margin-bottom: 12px;
 }
 
 .beyond__card-text span {
-  font-size: 13px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ---------------------------------
+   반응형 - Large Desktop (~1440px)
+--------------------------------- */
+@media (max-width: 1440px) {
+  .hero__title {
+    font-size: 96px;
+  }
+
+  .hero__desc {
+    font-size: 36px;
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+
+  .brand {
+    padding: 140px 0;
+  }
+
+  .brand__title {
+    font-size: 34px;
+  }
+
+  .brand__text {
+    font-size: 17px;
+  }
+
+  .recommend,
+  .product,
+  .beyond {
+    padding: 120px 0;
+  }
+}
+
+/* ---------------------------------
+   반응형 - Desktop (~1200px)
+--------------------------------- */
+@media (max-width: 1200px) {
+  .hero__title {
+    font-size: 80px;
+  }
+
+  .hero__desc {
+    font-size: 30px;
+  }
+
+  .section-title {
+    font-size: 40px;
+  }
+
+  .brand__title {
+    font-size: 28px;
+  }
+
+  .brand__text {
+    font-size: 16px;
+  }
+
+  .recommend__label {
+    font-size: 22px;
+  }
+
+  .beyond__card-text strong {
+    font-size: 26px;
+  }
 }
 
 /* ---------------------------------
    반응형 - Tablet (~1024px)
 --------------------------------- */
 @media (max-width: 1024px) {
+  .hero__title {
+    font-size: 60px;
+  }
+
+  .hero__desc {
+    font-size: 24px;
+  }
+
+  .hero__content {
+    bottom: 100px;
+  }
+
+  .section-title {
+    font-size: 34px;
+  }
+
+  .brand {
+    padding: 100px 0;
+  }
+
+  .brand__title {
+    font-size: 24px;
+  }
+
+  .recommend,
+  .product,
+  .beyond {
+    padding: 80px 0;
+  }
+
+  .recommend__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .product__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -270,6 +386,18 @@
 --------------------------------- */
 @media (max-width: 768px) {
   .hero__title {
+    font-size: 36px;
+  }
+
+  .hero__desc {
+    font-size: 16px;
+  }
+
+  .hero__content {
+    bottom: 80px;
+  }
+
+  .section-title {
     font-size: 28px;
   }
 
@@ -279,6 +407,10 @@
 
   .brand__title {
     font-size: 20px;
+  }
+
+  .brand__text {
+    font-size: 14px;
   }
 
   .recommend,
@@ -300,5 +432,17 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+  }
+
+  .recommend__label {
+    font-size: 18px;
+  }
+
+  .beyond__card-text strong {
+    font-size: 20px;
+  }
+
+  .beyond__card-text span {
+    font-size: 13px;
   }
 }
