@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GODIVA | A Century of Chocolate Heritage</title>
+  <title>GODIVA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
@@ -50,7 +50,12 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="container hero__content">
+    <div class="hero__slides">
+      <div class="hero__slide is-active" style="background-image: url('assets/images/common/mainbanner.png')"></div>
+      <div class="hero__slide" style="background-image: url('assets/images/common/banner2.png')"></div>
+      <div class="hero__slide" style="background-image: url('assets/images/common/mainbanner.png')"></div>
+    </div>
+    <div class="container hero__content is-visible">
       <h1 class="hero__title">A Century of Chocolate Heritage</h1>
       <p class="hero__desc">
         Crafted since 1926 with artisanal tradition and rich flavor, <br>
@@ -66,7 +71,7 @@
       <span class="hero__indicator-count">1/3</span>
       <div class="hero__indicator-btns">
         <button type="button" aria-label="이전 슬라이드"><img src="assets/images/common/arrowL_icon.png" alt="이전" /></button>
-        <button type="button" aria-label="재생"><img src="assets/images/common/play_icon.png" alt="재생" /></button>
+        <button type="button" aria-label="재생/정지"><img src="assets/images/common/pause_icon.png" alt="정지" /></button>
         <button type="button" aria-label="다음 슬라이드"><img src="assets/images/common/arrowR_icon.png" alt="다음" /></button>
       </div>
     </div>

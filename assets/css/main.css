@@ -10,9 +10,25 @@
   min-height: 720px;
   color: var(--color-white);
   background-color: var(--color-dark);
-  background-image: url("../images/common/mainbanner.png");
+  overflow: hidden;
+}
+
+.hero__slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
 }
 
 /* .hero::after {
@@ -28,6 +44,12 @@
   right: 0;
   bottom: 60px;
   z-index: 1;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.hero__content:not(.is-visible) {
+  opacity: 0;
 }
 
 .hero__title {
@@ -71,6 +93,13 @@
   gap: 2px;
 }
 
+.hero__indicator-btns button[aria-label='재생/정지'] {
+  width: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+
 .hero__indicator {
   font-family: "Pretendard", sans-serif;
   position: absolute;
@@ -92,38 +121,42 @@
 }
 
 .brand__eyebrow {
-  font-family: var(--font-serif);
-  color: var(--color-gold);
-  font-size: 24px;
-  letter-spacing: 1.5px;
+  font-family: "Cormorant Garamond", var(--font-serif);
+  color: #B29656;
+  font-size: 42px;
+  font-weight: 600;
 }
 
 .brand__name {
-  font-family: var(--font-serif);
+  font-family: "Cormorant Garamond", var(--font-serif);
   color: var(--color-maroon);
-  font-size: 30px;
+  font-size: 42px;
+  font-weight: 600;
   margin-top: 12px;
 }
 
 .brand__divider {
-  width: 1px;
-  height: 80px;
-  background-color: var(--color-line);
+  width: 2px;
+  height: 100px;
+  background-color: #707070;
   margin: 60px auto;
 }
 
 .brand__title {
+  font-family: "Pretendard", sans-serif;
   font-size: 40px;
   font-weight: 700;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .brand__text {
   max-width: 1000px;
   margin: 0 auto;
+  font-family: "Pretendard", sans-serif;
   color: var(--color-text);
-  font-size: 18px;
-  line-height: 2;
+  font-size: 24px;
+  line-height: 1.5;
+  
 }
 
 .brand__text + .brand__text {
@@ -131,7 +164,23 @@
 }
 
 .brand__btn {
-  margin-top: 60px;
+  margin-top: 88px;
+  font-family: "Cormorant Garamond", var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  border: 1px solid var(--color-text);
+  outline: 1px solid var(--color-text);
+  outline-offset: -6px;
+  color: var(--color-text);
+  background-color: transparent;
+  width: 192px;
+  height: 63px;
+  padding: 0;
+}
+
+.brand__btn:hover {
+  background-color: var(--color-dark-2);
+  color: var(--color-white);
 }
 
 /* Recommendation */
