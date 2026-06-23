@@ -149,6 +149,10 @@
   margin-bottom: 40px;
 }
 
+.year {
+  font-size: 62px;
+  font-weight: 500;
+}
 .brand__text {
   max-width: 1000px;
   margin: 0 auto;
@@ -190,35 +194,66 @@
   color: var(--color-white);
 }
 
-.recommend .section-title {
-  color: var(--color-white);
-  margin-bottom: 64px;
+.recommend__grid {
+  position: relative;
+  min-height: 1000px;
 }
 
-.recommend__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+.recommend__title {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-white);
+  font-family: "Cormorant Garamond", var(--font-serif);
+  font-size: 80px;
+  white-space: nowrap;
+  z-index: 1;
+  margin: 0;
 }
 
 .recommend__card {
-  position: relative;
+  position: absolute;
+  width: 400px;
   overflow: hidden;
 }
 
 .recommend__card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
+  display: block;
 }
 
 .recommend__label {
   position: absolute;
   left: 28px;
   bottom: 24px;
-  font-family: var(--font-serif);
-  font-size: 28px;
+  font-family: "Noto Serif KR", serif;
+  font-weight: 700;
+  font-size: 50px;
   color: var(--color-white);
+}
+
+/* Birthday - 우측 상단 */
+.recommend__card:nth-child(2) {
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+/* Thank you - 좌측 중단 */
+.recommend__card:nth-child(3) {
+  top: 260px;
+  left: 0;
+  z-index: 3;
+}
+
+/* Anniversary - 우측 하단 */
+.recommend__card:nth-child(4) {
+  bottom: 0;
+  right: 60px;
+  z-index: 2;
 }
 
 /* Product */
@@ -422,7 +457,23 @@
   }
 
   .recommend__grid {
-    grid-template-columns: repeat(2, 1fr);
+    min-height: 760px;
+  }
+
+  .recommend__title {
+    font-size: 52px;
+  }
+
+  .recommend__card {
+    width: 280px;
+  }
+
+  .recommend__card:nth-child(3) {
+    top: 200px;
+  }
+
+  .recommend__card:nth-child(4) {
+    right: 30px;
   }
 
   .product__grid {
@@ -468,9 +519,38 @@
     padding: 60px 0;
   }
 
-  .recommend__grid,
   .beyond__grid {
     grid-template-columns: 1fr;
+  }
+
+  .recommend__grid {
+    min-height: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .recommend__title {
+    position: static;
+    transform: none;
+    white-space: normal;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .recommend__card {
+    position: static;
+    width: 100%;
+  }
+
+  .recommend__card:nth-child(2),
+  .recommend__card:nth-child(3),
+  .recommend__card:nth-child(4) {
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
   }
 
   .product__grid {
