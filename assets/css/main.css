@@ -196,9 +196,12 @@
 
 .recommend__grid {
   position: relative;
-  min-height: 1000px;
+  min-height: calc(400px * 4 / 3 * 3);
 }
-
+.recommend .section-title {
+  font-size: 112px;
+  font-weight: 500;
+}
 .recommend__title {
   position: absolute;
   top: 42%;
@@ -236,22 +239,22 @@
 }
 
 /* Birthday - 우측 상단 */
-.recommend__card:nth-child(2) {
+.recommend__card:nth-child(1) {
   top: 0;
   right: 0;
   z-index: 2;
 }
 
-/* Thank you - 좌측 중단 */
-.recommend__card:nth-child(3) {
-  top: 260px;
+/* Thank you - 좌측 중앙 */
+.recommend__card:nth-child(2) {
+  top: calc(400px * 4 / 3);
   left: 0;
   z-index: 3;
 }
 
 /* Anniversary - 우측 하단 */
-.recommend__card:nth-child(4) {
-  bottom: 0;
+.recommend__card:nth-child(3) {
+  top: calc(400px * 4 / 3 * 2);
   right: 60px;
   z-index: 2;
 }
@@ -260,45 +263,84 @@
 .product {
   padding: 140px 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .product__head {
   display: flex;
-  align-items: center;
+  align-items: last baseline;
   justify-content: space-between;
   text-align: left;
-  margin-bottom: 56px;
+  margin-bottom: 143px;
 }
 
 .product__more {
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
   color: var(--color-text-sub);
 }
 
 .product__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(3, 345px);
+  justify-content: end;
+  gap: 47px;
   text-align: left;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.product__grid::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: calc((100% - 100vw) / 2);
+  bottom: 0;
+  height: calc(346px * 0.5 + 155px);
+  background-color: var(--color-gold);
+  z-index: 0;
+}
+
+.product__card {
+  position: relative;
+  z-index: 1;
 }
 
 .product__card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 345px;
+  height: 346px;
   object-fit: cover;
+  display: block;
 }
 
 .product__name {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: 700;
+  font-family: "Pretendard", sans-serif;
+  color: var(--color-white);
+  margin-top: 36px;
+  font-size: 32px;
+  font-weight: 300;
 }
 
 .product__btn {
-  margin-top: 16px;
-  width: 100%;
-  padding: 14px 0;
-  font-size: 14px;
+  margin-top: 13px;
+  width: 140px;
+  height: 46px;
+  padding: 5px;
+  font-family: "Cormorant Garamond", var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid var(--color-white);
+  outline: 1px solid var(--color-white);
+  outline-offset: -4px;
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+.product__btn:hover {
+  background-color: var(--color-white);
+  color: var(--color-gold);
 }
 
 /* Beyond Chocolate */
@@ -313,7 +355,7 @@
 
 .beyond .section-title em {
   font-style: normal;
-  color: var(--color-maroon);
+  color: var(--color-gold);
 }
 
 .beyond__grid {
@@ -457,7 +499,7 @@
   }
 
   .recommend__grid {
-    min-height: 760px;
+    min-height: calc(280px * 4 / 3 * 3);
   }
 
   .recommend__title {
@@ -468,16 +510,23 @@
     width: 280px;
   }
 
-  .recommend__card:nth-child(3) {
+  .recommend__card:nth-child(2) {
     top: 200px;
   }
 
-  .recommend__card:nth-child(4) {
+  .recommend__card:nth-child(3) {
     right: 30px;
   }
 
   .product__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 345px);
+    justify-content: end;
+    padding-bottom: 32px;
+  }
+
+  .product__grid::before {
+    left: 0;
+    height: calc(346px * 0.5 + 147px);
   }
 }
 
@@ -544,9 +593,9 @@
     width: 100%;
   }
 
+  .recommend__card:nth-child(1),
   .recommend__card:nth-child(2),
-  .recommend__card:nth-child(3),
-  .recommend__card:nth-child(4) {
+  .recommend__card:nth-child(3) {
     top: auto;
     right: auto;
     left: auto;
@@ -555,6 +604,14 @@
 
   .product__grid {
     grid-template-columns: 1fr;
+    justify-content: normal;
+    padding-bottom: 28px;
+  }
+
+  .product__grid::before {
+    left: 0;
+    right: calc((100% - 100vw) / 2);
+    height: calc(346px * 0.5 + 143px);
   }
 
   .product__head {
