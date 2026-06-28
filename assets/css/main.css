@@ -31,12 +31,12 @@
   opacity: 1;
 }
 
-/* .hero::after {
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(20, 10, 6, 0.75)); 
-} */
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+}
 
 .hero__content {
   position: absolute;
@@ -183,8 +183,10 @@
 }
 
 .brand__btn:hover {
-  background-color: var(--color-dark-2);
+  background-color: var(--color-gold);
   color: var(--color-white);
+  border-color: var(--color-gold);
+  outline: none;
 }
 
 /* Recommendation */
@@ -196,7 +198,7 @@
 
 .recommend__grid {
   position: relative;
-  min-height: calc(400px * 4 / 3 * 3);
+  min-height: calc(600px * 4 / 3 * 3);
 }
 .recommend .section-title {
   font-size: 112px;
@@ -217,7 +219,7 @@
 
 .recommend__card {
   position: absolute;
-  width: 400px;
+  width: 600px;
   overflow: hidden;
 }
 
@@ -247,14 +249,14 @@
 
 /* Thank you - 좌측 중앙 */
 .recommend__card:nth-child(2) {
-  top: calc(400px * 4 / 3);
+  top: calc(600px * 4 / 3);
   left: 0;
   z-index: 3;
 }
 
 /* Anniversary - 우측 하단 */
 .recommend__card:nth-child(3) {
-  top: calc(400px * 4 / 3 * 2);
+  top: calc(600px * 4 / 3 * 2);
   right: 60px;
   z-index: 2;
 }
@@ -313,6 +315,7 @@
   height: 346px;
   object-fit: cover;
   display: block;
+  cursor: pointer;
 }
 
 .product__name {
@@ -345,7 +348,7 @@
 
 /* Beyond Chocolate */
 .beyond {
-  padding: 140px 0;
+  padding: 140px 0 395px;
   text-align: center;
 }
 
@@ -362,13 +365,26 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-  margin-top: 64px;
+  margin-top: 226px;
   text-align: left;
+  align-items: start;
 }
 
 .beyond__card {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.beyond__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.beyond__card:nth-child(2) {
+  margin-top: 180px;
 }
 
 .beyond__card img {
@@ -382,18 +398,28 @@
   left: 36px;
   top: 36px;
   color: var(--color-white);
+  z-index: 1;
+}
+
+.beyond__card:nth-child(2) .beyond__card-text {
+  left: auto;
+  right: 36px;
+  text-align: right;
 }
 
 .beyond__card-text strong {
   display: block;
-  font-family: var(--font-serif);
-  font-size: 32px;
-  margin-bottom: 12px;
+  font-family: "Cormorant Garamond", var(--font-serif);
+  font-size: 72px;
+  font-weight: 600;
+  margin-bottom: 18px;
 }
 
 .beyond__card-text span {
-  font-size: 16px;
-  line-height: 1.8;
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 /* ---------------------------------
@@ -570,6 +596,10 @@
 
   .beyond__grid {
     grid-template-columns: 1fr;
+  }
+
+  .beyond__card:nth-child(2) {
+    margin-top: 0;
   }
 
   .recommend__grid {
